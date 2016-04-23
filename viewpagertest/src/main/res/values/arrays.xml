@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="viewpager">
+        <item>11</item>
+        <item>22</item>
+        <item>33</item>
+    </string-array>
+</resources>

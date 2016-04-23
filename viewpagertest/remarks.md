@@ -1,0 +1,1 @@
+# ViewPager + Fragment 主线程是Activity ，在子线程Fragment上同样可以实现
