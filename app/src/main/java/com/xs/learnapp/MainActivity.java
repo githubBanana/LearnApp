@@ -6,21 +6,18 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Switch;
 
 import com.xs.learnapp.adapter.MainListAdapter;
+import com.xs.toolbartest.TestActivity;
 import com.xs.viewpagertest.activity.VFActivity;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -31,7 +28,8 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setBackgroundColor(getResources().getColor(R.color.color_black));
         setSupportActionBar(toolbar);
-
+        showUpEnabled(true);
+        toolbar.setTitle(getResources().getString(R.string.app_name));
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,6 +40,15 @@ public class MainActivity extends AppCompatActivity {
         });
 
         init();
+    }
+    public void showUpEnabled(boolean enable) {
+        getSupportActionBar().setDisplayHomeAsUpEnabled(enable);
+        getSupportActionBar().setHomeAsUpIndicator(R.mipmap.back);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
     }
 
     @Override
@@ -62,6 +69,9 @@ public class MainActivity extends AppCompatActivity {
         if (id == R.id.action_settings) {
             return true;
         }
+        if (id == android.R.id.home) {
+            finish();
+        }
 
         return super.onOptionsItemSelected(item);
     }
@@ -81,6 +91,9 @@ public class MainActivity extends AppCompatActivity {
                 switch (position) {
                     case 0:
                         intent.setClass(MainActivity.this, VFActivity.class);
+                        break;
+                    case 1:
+                        intent.setClass(MainActivity.this, TestActivity.class);
                         break;
                 }
                 startActivity(intent);

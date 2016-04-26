@@ -35,7 +35,6 @@ public class VFActivity extends AppCompatActivity {
         mTabLayout.addTab(mTabLayout.newTab().setText("YY"));
         mTabLayout.addTab(mTabLayout.newTab().setText("xx"));
         mTabLayout.addTab(mTabLayout.newTab().setText("tt"));
-//        mTabLayout.addTab(mTabLayout.newTab().setCustomView());
 
         myAdapter = new MyAdapter(getSupportFragmentManager());
         String[] arrayStrings = getResources().getStringArray(R.array.viewpager);

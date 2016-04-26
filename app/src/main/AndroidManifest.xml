@@ -19,6 +19,8 @@
             </intent-filter>
         </activity>
         <activity android:name="com.xs.viewpagertest.activity.VFActivity"/>
+        <activity android:name="com.xs.toolbartest.TestActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
 </manifest>
