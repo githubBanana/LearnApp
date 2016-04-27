@@ -4,6 +4,8 @@ import android.util.Log;
 
 import com.google.gson.Gson;
 import com.xs.retrofitlib.model.GetRankModel;
+import com.xs.retrofitlib.model.GetTopModel;
+import com.xs.retrofitlib.model.LabelTopicModel;
 
 import org.json.JSONObject;
 
@@ -54,6 +56,28 @@ public class RequestHelper {
         map.put("PageSize", 10);
         return request("GetRank", map, GetRankModel.class);
     }
+
+    /**
+     * GetLabelTopic
+     * 获取标签朋友圈消息
+     *
+     * @return
+     */
+    public static Observable<LabelTopicModel> getLabelTopic() {
+        return request("GetLabelTopic", LabelTopicModel.class);
+    }
+
+    /**
+     * GetTop
+     * 获取轮播图
+     *
+     * @return
+     */
+    public static Observable<GetTopModel> getTop() {
+        return request("GetTop", GetTopModel.class);
+    }
+
+
     /**************************************************************************************************8*/
 
     static {
@@ -62,7 +86,7 @@ public class RequestHelper {
         OkHttpClient client = new OkHttpClient.Builder().addInterceptor(chain -> {
             Response response = chain.proceed(chain.request());
             ResponseBody responseBody = response.body();
-            String result = responseBody.toString();
+            String result = responseBody.string();
             Log.e("Client", "intercept#result no decrypt:" + result);
             result = DESUtil.decryptDoNet(result);
             Log.e("Client", "intercept#result:" + result);

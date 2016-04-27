@@ -1,15 +1,20 @@
 package com.xs.retrofitlib;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import com.xs.retrofitlib.api.MySubscriber;
 import com.xs.retrofitlib.api.RequestHelper;
 import com.xs.retrofitlib.model.GetRankModel;
+import com.xs.retrofitlib.model.GetTopModel;
+import com.xs.retrofitlib.model.LabelTopicModel;
 
 import rx.Observable;
 import rx.Subscriber;
 import rx.Subscription;
+import rx.android.schedulers.AndroidSchedulers;
 
 /**
  * @version V1.0 <描述当前版本功能>
@@ -38,7 +43,7 @@ public class NetTestActivity extends BaseActivity{
         _tvNet2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                getLableTopicAndTop();
             }
         });
     }
@@ -59,6 +64,42 @@ public class NetTestActivity extends BaseActivity{
 
             @Override
             public void onNext(GetRankModel getRankModel) {
+
+            }
+        });
+        addSubscription(subscription);
+    }
+
+    /*连续访问*/
+    private void getLableTopicAndTop() {
+        Observable<GetTopModel> getTopModelObservable = RequestHelper.getTop();
+        Observable<LabelTopicModel> getLabelTopicModelObservable = RequestHelper.getLabelTopic();
+        Subscription subscription = Observable.zip(getTopModelObservable,getLabelTopicModelObservable,(a,b) -> {
+            if (a.isSuccessed()) {
+                Log.e(TAG,"a.isSuccessed(!!!!!!!!!!!!!!!!!!!!!!!");
+
+            }
+            if(b.isSuccessed()) {
+                Log.e(TAG,"b.isSuccessed()(!!!!!!!!!!!!!!!!!!!!!!!");
+            }
+            return null;
+        }).observeOn(AndroidSchedulers.mainThread()).subscribe(new MySubscriber<Object>() {
+            @Override
+            public void onNext(Object o) {
+                Log.e(TAG,"onNext!!!!!!!!!!!!!!!!!!!!!!!");
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                super.onError(e);
+                Log.e(TAG, "onError!!!!!!!!!!!!!!!!!!!!!!!");
+
+            }
+
+            @Override
+            public void onCompleted() {
+                super.onCompleted();
+                Log.e(TAG, "onCompleted!!!!!!!!!!!!!!!!!!!!!!!");
 
             }
         });
