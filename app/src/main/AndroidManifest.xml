@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.xs.learnapp">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -21,6 +22,7 @@
         <activity android:name="com.xs.viewpagertest.activity.VFActivity"/>
         <activity android:name="com.xs.toolbartest.TestActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name="com.xs.retrofitlib.NetTestActivity"/>
     </application>
 
 </manifest>

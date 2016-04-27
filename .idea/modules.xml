@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/LearnApp.iml" filepath="$PROJECT_DIR$/LearnApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/retrofitlib/retrofitlib.iml" filepath="$PROJECT_DIR$/retrofitlib/retrofitlib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/toolbartest/toolbartest.iml" filepath="$PROJECT_DIR$/toolbartest/toolbartest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/viewpagertest/viewpagertest.iml" filepath="$PROJECT_DIR$/viewpagertest/viewpagertest.iml" />
+    </modules>
+  </component>
+</project>

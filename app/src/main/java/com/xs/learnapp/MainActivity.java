@@ -13,6 +13,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.xs.learnapp.adapter.MainListAdapter;
+import com.xs.retrofitlib.NetTestActivity;
 import com.xs.toolbartest.TestActivity;
 import com.xs.viewpagertest.activity.VFActivity;
 
@@ -94,6 +95,9 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case 1:
                         intent.setClass(MainActivity.this, TestActivity.class);
+                        break;
+                    case 2:
+                        intent.setClass(MainActivity.this, NetTestActivity.class);
                         break;
                 }
                 startActivity(intent);

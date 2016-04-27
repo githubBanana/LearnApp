@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">ToolBarTest</string>
+    <string name="retrolambda_text">toolbar 的继承使用 以及 retrolambda插件的使用</string>
+</resources>
