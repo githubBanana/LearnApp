@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/LearnApp.iml" filepath="$PROJECT_DIR$/LearnApp.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/justtest/justtest.iml" filepath="$PROJECT_DIR$/justtest/justtest.iml" />
       <module fileurl="file://$PROJECT_DIR$/retrofitlib/retrofitlib.iml" filepath="$PROJECT_DIR$/retrofitlib/retrofitlib.iml" />
       <module fileurl="file://$PROJECT_DIR$/toolbartest/toolbartest.iml" filepath="$PROJECT_DIR$/toolbartest/toolbartest.iml" />
       <module fileurl="file://$PROJECT_DIR$/viewpagertest/viewpagertest.iml" filepath="$PROJECT_DIR$/viewpagertest/viewpagertest.iml" />

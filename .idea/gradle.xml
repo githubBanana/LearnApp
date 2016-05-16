@@ -10,6 +10,17 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/justtest" />
+            <option value="$PROJECT_DIR$/retrofitlib" />
+            <option value="$PROJECT_DIR$/toolbartest" />
+            <option value="$PROJECT_DIR$/viewpagertest" />
+          </set>
+        </option>
+        <option name="myModules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/justtest" />
             <option value="$PROJECT_DIR$/retrofitlib" />
             <option value="$PROJECT_DIR$/toolbartest" />
             <option value="$PROJECT_DIR$/viewpagertest" />
