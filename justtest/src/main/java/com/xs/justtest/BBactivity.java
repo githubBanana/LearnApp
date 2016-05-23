@@ -11,5 +11,4 @@ import android.support.v7.app.AppCompatActivity;
 public class BBactivity extends AppCompatActivity {
     private static final String TAG = "BBactivity";
 
-
 }

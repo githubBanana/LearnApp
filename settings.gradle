@@ -1,1 +1,1 @@
-include ':app', ':viewpagertest', ':toolbartest', ':retrofitlib', ':justtest'
+include ':app', ':viewpagertest', ':toolbartest', ':retrofitlib', ':justtest', ':customview'

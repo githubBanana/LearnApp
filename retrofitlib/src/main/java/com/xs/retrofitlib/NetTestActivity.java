@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.xs.retrofitlib.api.MySubscriber;
 import com.xs.retrofitlib.api.RequestHelper;
@@ -15,6 +16,7 @@ import rx.Observable;
 import rx.Subscriber;
 import rx.Subscription;
 import rx.android.schedulers.AndroidSchedulers;
+import rx.functions.Action1;
 
 /**
  * @version V1.0 <描述当前版本功能>
@@ -36,14 +38,54 @@ public class NetTestActivity extends BaseActivity{
         _tvNet1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                GetRank();
+//                GetRank();
             }
         });
 
         _tvNet2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getLableTopicAndTop();
+//                getLableTopicAndTop();
+                test("zhongguo","dssd");
+
+            }
+        });
+
+    }
+    private void test(String... string) {
+     /*   Observable.from(string).subscribe(new Subscriber<String>() {
+            @Override
+            public void onCompleted() {
+                Log.e(TAG,"onCompleted");
+            }
+
+            @Override
+            public void onError(Throwable e) {
+
+            }
+
+            @Override
+            public void onNext(String s) {
+                Log.e(TAG,"onNext:"+s);
+            }
+        });*/
+
+        Observable.just("fsf","rrr","dsdsdsds").subscribe(new Subscriber<String>() {
+            @Override
+            public void onCompleted() {
+                Log.e(TAG,"onCompleted");
+
+            }
+
+            @Override
+            public void onError(Throwable e) {
+
+            }
+
+            @Override
+            public void onNext(String s) {
+                Log.e(TAG,"onNext:"+s);
+
             }
         });
     }

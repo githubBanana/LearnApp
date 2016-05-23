@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.xs.customview.MyCustomViewActivity;
 import com.xs.learnapp.adapter.MainListAdapter;
 import com.xs.retrofitlib.NetTestActivity;
 import com.xs.toolbartest.TestActivity;
@@ -41,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         init();
+
     }
     public void showUpEnabled(boolean enable) {
         getSupportActionBar().setDisplayHomeAsUpEnabled(enable);
@@ -92,15 +94,24 @@ public class MainActivity extends AppCompatActivity {
                 switch (position) {
                     case 0:
                         intent.setClass(MainActivity.this, VFActivity.class);
+                        startActivity(intent);
+
                         break;
                     case 1:
                         intent.setClass(MainActivity.this, TestActivity.class);
                         break;
                     case 2:
                         intent.setClass(MainActivity.this, NetTestActivity.class);
+                        startActivity(intent);
+
+                        break;
+                    case 3:
+                        intent.setClass(MainActivity.this, MyCustomViewActivity.class);
+                        startActivity(intent);
+                        break;
+                    case 4:
                         break;
                 }
-                startActivity(intent);
             }
         });
 

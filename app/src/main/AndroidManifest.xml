@@ -23,6 +23,7 @@
         <activity android:name="com.xs.toolbartest.TestActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name="com.xs.retrofitlib.NetTestActivity"/>
+        <activity android:name="com.xs.customview.MyCustomViewActivity"/>
     </application>
 
 </manifest>

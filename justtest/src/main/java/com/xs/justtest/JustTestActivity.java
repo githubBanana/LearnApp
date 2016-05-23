@@ -1,11 +1,10 @@
 package com.xs.justtest;
 
-import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.content.pm.ResolveInfo;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.NotificationCompat;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -16,6 +15,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.GridView;
+
+import com.xs.justtest.generics.Contianer;
 
 import java.util.List;
 
@@ -94,7 +95,7 @@ public class JustTestActivity extends AppCompatActivity
         } else if (id == R.id.nav_manage) {
 
         } else if (id == R.id.nav_share) {
-
+            testGenerics();
         } else if (id == R.id.nav_send) {
             testView();
         }
@@ -106,6 +107,10 @@ public class JustTestActivity extends AppCompatActivity
 
     private void testView() {
         final GridView mGridView = (GridView) findViewById(R.id.gridView_Id);
-        mGridView.setAdapter(new App2Adapter(JustTestActivity.this));
+        mGridView.setAdapter(new AppAdapter(JustTestActivity.this));
+    }
+    private void testGenerics() {
+        Contianer<String,Integer> contianer = new Contianer<String ,Integer>("io",9);
+        Log.e("showtag",""+contianer.getK()+" "+contianer.getV());
     }
 }
