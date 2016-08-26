@@ -23,7 +23,14 @@
         <activity android:name="com.xs.toolbartest.TestActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name="com.xs.retrofitlib.NetTestActivity"/>
-        <activity android:name="com.xs.customview.MyCustomViewActivity"/>
+        <activity android:name="com.xs.customview.demo1.MyCustomViewActivity"/>
+        <activity android:name="com.xs.retrofitlib.test.LinShiActivity">
+            <!--<intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>-->
+        </activity>
     </application>
 
 </manifest>

@@ -1,8 +1,10 @@
-package com.xs.customview;
+package com.xs.customview.demo1;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+
+import com.xs.customview.R;
 
 /**
  * @version V1.0 <描述当前版本功能>

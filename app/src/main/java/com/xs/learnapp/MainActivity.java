@@ -12,7 +12,7 @@ import android.view.MenuItem;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import com.xs.customview.MyCustomViewActivity;
+import com.xs.customview.demo1.MyCustomViewActivity;
 import com.xs.learnapp.adapter.MainListAdapter;
 import com.xs.retrofitlib.NetTestActivity;
 import com.xs.toolbartest.TestActivity;
@@ -99,6 +99,7 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case 1:
                         intent.setClass(MainActivity.this, TestActivity.class);
+                        startActivity(intent);
                         break;
                     case 2:
                         intent.setClass(MainActivity.this, NetTestActivity.class);

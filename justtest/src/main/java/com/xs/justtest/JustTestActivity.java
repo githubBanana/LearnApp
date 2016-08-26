@@ -16,7 +16,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.GridView;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
 import com.xs.justtest.generics.Contianer;
+import com.xs.justtest.jgson.TestBean;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.List;
 
@@ -93,7 +99,7 @@ public class JustTestActivity extends AppCompatActivity
         } else if (id == R.id.nav_slideshow) {
 
         } else if (id == R.id.nav_manage) {
-
+            testGsonAndJson();
         } else if (id == R.id.nav_share) {
             testGenerics();
         } else if (id == R.id.nav_send) {
@@ -112,5 +118,27 @@ public class JustTestActivity extends AppCompatActivity
     private void testGenerics() {
         Contianer<String,Integer> contianer = new Contianer<String ,Integer>("io",9);
         Log.e("showtag",""+contianer.getK()+" "+contianer.getV());
+    }
+    private void testGsonAndJson() {
+        TestBean _testBean = new TestBean();
+        _testBean.setA("aa");
+        _testBean.setB("bb");
+        _testBean.setD(10);
+        String json = new Gson().toJson(_testBean);
+        TestBean _bean = new Gson().fromJson(json,TestBean.class);
+        Log.e("SHOWTAG",""+_bean.toString());
+        JsonArray jsons = new JsonArray();
+        jsons.add(json);
+        Log.e("showtag",""+jsons);
+        Log.e("showtag",""+jsons);
+        try {
+            JSONObject jsonObject = new JSONObject(json);
+            int c = jsonObject.getInt("c");
+            int d = jsonObject.getInt("d");
+            String a = jsonObject.getString("a");
+            String b = jsonObject.getString("b");
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
 }

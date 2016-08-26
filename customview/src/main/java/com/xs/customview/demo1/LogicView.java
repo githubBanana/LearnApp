@@ -1,10 +1,14 @@
-package com.xs.customview;
+package com.xs.customview.demo1;
 
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.Path;
 import android.util.AttributeSet;
+
+import com.xs.customview.R;
 
 /**
  * @version V1.0 <描述当前版本功能>
@@ -44,6 +48,17 @@ public class LogicView extends MyBaseView {
     protected void drawSub(Canvas canvas) {
         canvas.drawCircle(getWidth() / 2, getHeight() / 2, radiu, paint);
         canvas.drawText("mybaseview", xScroll, 30, paint);
+
+        //画贝塞尔曲线
+        Paint p = new Paint();
+        canvas.drawText("画贝塞尔曲线:", 10, 310, p);
+        p.reset();
+        p.setStyle(Paint.Style.STROKE);
+        p.setColor(Color.WHITE);
+        Path path2=new Path();
+        path2.moveTo(100, 320);//设置Path的起点
+        path2.quadTo(150, 310, 170, 400); //设置贝塞尔曲线的控制点坐标和终点坐标
+        canvas.drawPath(path2, p);//画出贝塞尔曲线
     }
 
     @Override

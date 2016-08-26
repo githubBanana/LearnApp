@@ -81,6 +81,16 @@ public class RequestHelper {
     /**************************************************************************************************8*/
 
     static {
+
+        /////////////////////////////////////////
+
+    /*    OkHttpClient client1 = new OkHttpClient.Builder().addInterceptor(new Interceptor() {
+            @Override
+            public Response intercept(Chain chain) throws IOException {
+                return null;
+            }
+        }).build();*/
+        ///////////////////////////////////////
         File externalStorageDirectory = android.os.Environment.getExternalStorageDirectory();
         okhttp3.Cache cache = new okhttp3.Cache(new File(externalStorageDirectory,"cache"),1024*1024);
         OkHttpClient client = new OkHttpClient.Builder().addInterceptor(chain -> {
